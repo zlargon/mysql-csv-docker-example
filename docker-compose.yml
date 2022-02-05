@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0.28
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=crime
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    command:
+      # https://github.com/docker-library/mysql/issues/541#issuecomment-597866001
+      - '--secure-file-priv=/tmp'
+    volumes:
+      - ./dataset:/tmp
+      - ./initdb:/docker-entrypoint-initdb.d

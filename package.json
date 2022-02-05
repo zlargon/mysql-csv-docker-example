@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test": "mysql -h 127.0.0.1 -u root -D crime -e 'SELECT INCIDENT_NUMBER, OFFENSE_CODE_GROUP, OFFENSE_DESCRIPTION FROM CRIME_CSV LIMIT 10'",
+    "------------- docker commands -------------": "",
+    "up": "  docker compose -f docker-compose.yml up -d",
+    "stop": "docker compose -f docker-compose.yml stop",
+    "down": "docker compose -f docker-compose.yml down",
+    "log": " docker compose -f docker-compose.yml logs --follow"
+  }
+}
